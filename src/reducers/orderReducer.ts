@@ -40,6 +40,14 @@ export const orderReducer = (
         }
     }
 
+    if (action.type === 'remevo-item') {
+        const updatedOrder = state.order.filter(item => item.id !== action.payload.id)
+        return {
+            ...state,
+            order: updatedOrder
+        }
+    }
+
     if (action.type === 'place-order') {
 
         return {
@@ -47,10 +55,5 @@ export const orderReducer = (
         }
     }
 
-    if (action.type === 'remevo-item') {
 
-        return {
-            ...state
-        }
-    }
 }
