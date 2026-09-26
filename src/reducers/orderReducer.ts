@@ -58,10 +58,10 @@ export const orderReducer = (
     }
 
     if (action.type === 'place-order') {
-        state.order = []
-        state.tip = 0
         return {
-            ...state
+            ...state,
+            order: [],
+            tip: 0
         }
     }
 
